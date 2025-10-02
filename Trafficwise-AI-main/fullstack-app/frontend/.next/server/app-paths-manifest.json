@@ -1,9 +1,0 @@
-{
-  "/page": "app/page.js",
-  "/routes/page": "app/routes/page.js",
-  "/map/page": "app/map/page.js",
-  "/analytics/page": "app/analytics/page.js",
-  "/notifications/page": "app/notifications/page.js",
-  "/traffic/page": "app/traffic/page.js",
-  "/about/page": "app/about/page.js"
-}
