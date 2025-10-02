@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -73,4 +74,175 @@
   body {
     @apply bg-background text-foreground;
   }
+=======
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+/* Leaflet CSS via CDN */
+@import url('https://unpkg.com/leaflet@1.9.4/dist/leaflet.css');
+
+/* Base styles */
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+  
+  body {
+    @apply bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 text-slate-900 antialiased;
+    background-attachment: fixed;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-slate-100/50;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-slate-300/60 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-slate-400/70;
+}
+
+/* Leaflet map styles */
+.leaflet-container {
+  @apply rounded-lg shadow-lg;
+}
+
+.leaflet-popup-content {
+  @apply text-sm;
+}
+
+.leaflet-popup-content h4 {
+  @apply font-semibold text-gray-800 mb-2;
+}
+
+/* Custom components */
+@layer components {
+  .btn-primary {
+    @apply bg-gradient-to-r from-primary-600 to-primary-700 hover:from-primary-700 hover:to-primary-800 text-white font-semibold py-3 px-6 rounded-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2;
+  }
+  
+  .btn-secondary {
+    @apply bg-white/80 backdrop-blur-sm hover:bg-white border border-slate-200 hover:border-slate-300 text-slate-700 font-medium py-3 px-6 rounded-xl shadow-sm hover:shadow-md transform hover:scale-105 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-slate-500 focus:ring-offset-2;
+  }
+  
+  .btn-accent {
+    @apply bg-gradient-to-r from-accent-500 to-accent-600 hover:from-accent-600 hover:to-accent-700 text-white font-semibold py-3 px-6 rounded-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-accent-500 focus:ring-offset-2;
+  }
+  
+  .input-field {
+    @apply w-full px-4 py-3 bg-white/70 backdrop-blur-sm border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200 placeholder:text-slate-400;
+  }
+  
+  .card {
+    @apply bg-white/70 backdrop-blur-md rounded-2xl shadow-xl border border-white/20 p-6 hover:shadow-2xl transition-all duration-300;
+  }
+  
+  .card-gradient {
+    @apply bg-gradient-to-br from-white/80 to-white/60 backdrop-blur-md rounded-2xl shadow-xl border border-white/30 p-6 hover:shadow-2xl transition-all duration-300;
+  }
+  
+  .hero-section {
+    @apply relative bg-gradient-to-br from-primary-600 via-primary-700 to-primary-800 overflow-hidden;
+  }
+  
+  .glass-card {
+    @apply bg-white/10 backdrop-blur-md rounded-2xl border border-white/20 shadow-xl;
+  }
+  
+  .traffic-indicator {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold shadow-sm;
+  }
+  
+  .traffic-light {
+    @apply bg-emerald-100 text-emerald-800 ring-1 ring-emerald-200;
+  }
+  
+  .traffic-moderate {
+    @apply bg-amber-100 text-amber-800 ring-1 ring-amber-200;
+  }
+  
+  .traffic-heavy {
+    @apply bg-red-100 text-red-800 ring-1 ring-red-200;
+  }
+  
+  .traffic-very-heavy {
+    @apply bg-red-200 text-red-900 ring-1 ring-red-300;
+  }
+  
+  .nav-link {
+    @apply relative px-4 py-2 text-slate-600 hover:text-primary-600 font-medium transition-colors duration-200 before:absolute before:bottom-0 before:left-1/2 before:h-0.5 before:w-0 before:bg-primary-600 before:transition-all before:duration-200 hover:before:w-full hover:before:left-0;
+  }
+  
+  .nav-link.active {
+    @apply text-primary-600 before:w-full before:left-0;
+  }
+}
+
+/* Animation classes */
+@layer utilities {
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+  }
+  
+  .animate-slide-up {
+    animation: slideUp 0.3s ease-out;
+  }
+}
+
+/* Loading spinner */
+.spinner {
+  @apply inline-block w-4 h-4 border-2 border-current border-t-transparent rounded-full animate-spin;
+}
+
+/* Chat message styles */
+.chat-message {
+  @apply p-4 rounded-lg mb-4 max-w-4xl;
+}
+
+.chat-message.user {
+  @apply bg-primary-50 border-l-4 border-primary-500 ml-8;
+}
+
+.chat-message.assistant {
+  @apply bg-gray-50 border-l-4 border-gray-400 mr-8;
+}
+
+.chat-message h4 {
+  @apply font-semibold mb-2 text-gray-800;
+}
+
+.chat-message p {
+  @apply text-gray-700 leading-relaxed;
+}
+
+.chat-message strong {
+  @apply font-semibold text-gray-900;
+}
+
+.chat-message ul, .chat-message ol {
+  @apply ml-4 mt-2 space-y-1;
+}
+
+.chat-message li {
+  @apply text-gray-700;
+}
+
+/* Map container */
+.map-container {
+  @apply w-full h-96 lg:h-[500px] rounded-lg overflow-hidden shadow-lg;
+>>>>>>> 4d7f74d4140222c650493c6bdf72db3900aaaf72
 }
